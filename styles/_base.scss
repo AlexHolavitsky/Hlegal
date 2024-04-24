@@ -233,13 +233,6 @@ button:not(.lang-btn) {
 
 
 
-
-
-
-
-
-
-
 @media(min-width: 1025px) {
   .desktop {
     display: flex;
@@ -431,7 +424,6 @@ button:not(.lang-btn) {
 
         &:hover:not(.active) {
           background: rgba($greyBg, 0.2);
-
         }
       }
     }
