@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
 * {
   margin: 0;
@@ -24,6 +25,11 @@ body {
 .container {
   padding: 0 30px;
   margin: 0 auto;
+}
+@media (max-width: 433px) {
+  .container {
+    padding: 0 15px;
+  }
 }
 .container.no-padding {
   padding: 0;
@@ -60,9 +66,19 @@ a:hover, a:hover svg {
 h1 {
   font-size: 38px;
 }
+@media (max-width: 433px) {
+  h1 {
+    font-size: 30px;
+  }
+}
 
 h2 {
   font-size: 38px;
+}
+@media (max-width: 433px) {
+  h2 {
+    font-size: 20px;
+  }
 }
 
 h3 {
@@ -161,9 +177,10 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
   h2 {
     font-size: 30px;
   }
-  .container {
-    max-width: 708px;
-  }
+  /*
+    .container {
+      max-width: calc(648px + 60px); для того что лого хедера было ближе к краю
+    }*/
 }
 @media screen and (min-width: 1024px) {
   .container {
@@ -180,7 +197,7 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     max-width: 1660px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .desktop {
     display: flex;
   }
@@ -199,6 +216,13 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     display: block;
     padding: 18px 0 24px;
   }
+}
+@media (max-width: 1024px) and (max-width: 433px) {
+  .mobile-burger {
+    padding: 0px 0 0px;
+  }
+}
+@media (max-width: 1024px) {
   .mobile-burger .checkbox {
     position: absolute;
     display: block;
@@ -210,6 +234,13 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     opacity: 0;
     cursor: pointer;
   }
+}
+@media (max-width: 1024px) and (max-width: 433px) {
+  .mobile-burger .checkbox {
+    top: 63px;
+  }
+}
+@media (max-width: 1024px) {
   .mobile-burger .hamburger-lines {
     display: block;
     height: 26px;
@@ -222,6 +253,16 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     flex-direction: column;
     justify-content: space-between;
   }
+}
+@media (max-width: 1024px) and (max-width: 433px) {
+  .mobile-burger .hamburger-lines {
+    height: 18px;
+    width: 18px;
+    top: 66px;
+    right: 22px;
+  }
+}
+@media (max-width: 1024px) {
   .mobile-burger .hamburger-lines .line {
     display: block;
     height: 4px;

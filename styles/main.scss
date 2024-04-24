@@ -15,8 +15,14 @@ header {
     position: relative;
     gap: 4px;
     order: 0;
+    padding-bottom: 6px;/* выровнял хедер меню и лого*/
+
+    @media(max-width: 433px) {
+      align-items: flex-start;
+      gap: 0px;
+    }
    
-    @media(max-width: 1024px) {  
+    @media(max-width: 433px) {  
       &::after {     
       content: '/';
       font-weight: bold;
@@ -25,37 +31,37 @@ header {
       position: relative;
       top: -8px;
       order: 1;
-    }
-
-    &::before{
+     }
+      &::before{
       content: 'services';
       font-size: 36px;
       color: $white;
       order: 2;
       line-height: 80px;
       position: relative;
-      top: -8px;
+      top: -14px;
+      }
     }
-  }
-  @media(max-width: 435px) {  
+    @media(max-width: 433px) {  
       justify-content: flex-start;
       &::after {
-          font-size: 40px;
+          font-size: 65px;
       }
       &::before{
           font-size: 20px;
       }
       svg {
-      max-width: 70px;
+      max-width: 67px;
       }  
-  }
+    }
   }
 
   .header-content {
     height: 116px;
     justify-content: space-between;
     align-items: flex-end;
-    padding-bottom: 6px;
+    /*padding-bottom: 6px; выровнял хедер меню и лого*/
+    padding-bottom: 0px;
 
     &__right {
       display: flex;
@@ -143,9 +149,14 @@ header {
 }
 
 .top {
-height: calc(100vh - 116px);
-padding-top: 80px;
-margin-bottom: 45px;
+  height: calc(100vh - 116px);
+  /*height: calc(100vh - 124px);отступ лишний между h logo и слайд-меню */ 
+  padding-top: 60px;
+  /*margin-bottom: 45px;  отступ лишний между h logo и слайд-меню */ 
+  @media(max-width: 433px) {  
+   
+  }
+
 
  &__title {
   color: $white;
@@ -153,9 +164,9 @@ margin-bottom: 45px;
   position: absolute;
   line-height: 46px;
   left: 50%;
-  top: 49%;
+  top: 46%;
   transform: translate(-50%, -50%);
- }
+  }
  &__logo1 {
     position: absolute;
     /*для того чтобы (absolute) сработал вместо (mardin 0 auto) указываем left: 50% и transform: translateX(-50%);*/
@@ -164,20 +175,32 @@ margin-bottom: 45px;
     top: 0;
     bottom: 0;
     object-fit: cover;
-    height: 100vh;
- }
+    height: 100vh; /*растянет на всю высоту - но совпадает не с пиксельперфект*/
+    max-width: 100%;
+    /*height: auto; не растянет на всю высоту - но совпадает с пиксельперфект*/
+  }
  &__link{
   position: absolute;
-  bottom: 30px;
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
   color: $white;
-  a{
-
+  @media(max-width: 433px) {  
+    bottom: 72px;
   }
  }
 }
 
+
+
+
+
+.tabs__block{
+  margin-top: 60px;
+  @media(max-width: 433px) {  
+    margin-top: 0px;
+  }
+}
 .tabs {
   display: flex;
   flex-direction: column;
@@ -196,7 +219,9 @@ margin-bottom: 45px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-
+    @media(max-width: 433px) {  
+    padding: 30px 15px 0px;
+    }
   }
   .tab-nav {
     width: 100%;
@@ -235,6 +260,9 @@ margin-bottom: 45px;
           border-right: 4px solid $accent;
         }
       }
+      @media(max-width: 433px) {  
+        padding: 30px 30px;
+      }
     }
   }
 }
@@ -246,10 +274,11 @@ margin-bottom: 45px;
 
 .app__icon {
   &-inner {
-    padding-top: 55px;
-
+    padding-top: 61px;
+    @media(max-width: 433px) {  
+      padding: 25px 15px 0;
+    }
   }
-  &__icon-title {}
   &-list {
     list-style: none;
     display: flex;
@@ -261,14 +290,26 @@ margin-bottom: 45px;
     margin-top: 58px;
     padding-bottom: 61px;    
     gap: 60px;
+    @media (max-width: 375px) {    
+      gap: 30px;
+    }
+    @media(max-width: 433px) {  
+      gap: 34px;
+      margin-top: 32px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      padding-bottom: 0px;   
+    }
   }
   &-img {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     max-width: 100%;
     height: auto;
   }
   &-item {
     max-width: 400px;
+    min-height: 321px;
     font-size: 22px;
     @media (max-width: 1399px) {
       width: 261px;
@@ -276,11 +317,13 @@ margin-bottom: 45px;
     @media (max-width: 641px) {
       width: 315px;
     }
+    @media(max-width: 433px) { 
+
+    }
   }
   &-subtitle {
     max-width: 300px;
-    margin-top: 10px;
-    margin-bottom: 14px;
+    margin: 0 0 18px;
     font-size: 22px;
     color: $blue;
   }
@@ -318,19 +361,20 @@ margin-bottom: 45px;
 
 
 
-
+/*
 .container {
   margin: 0 auto;
   padding: 0 30px;
+
 }
 @media (min-width: 1024px) {
- /* .container {
+  .container {
     padding: 0 60px;
-  }  - портит хедер-мэин*/ 
-}
+  }  - портит хедер-мэин
+}*/ 
 
 .section {
-  padding: 40px 0;
+  padding: 18px 0 0px;
 }
 
 .flex {
@@ -342,11 +386,19 @@ margin-bottom: 45px;
   }
 }
 
+
+
 .slider .slick-list {
   margin: 0 -10px;
+  @media(max-width: 433px) { 
+    margin: 0 5px;
+  }
 }
 .slider.slick-dotted {
   margin-bottom: 50px;
+  @media(max-width: 433px) { 
+    margin-bottom: 106px;
+  }
 }
 .slider .slick-dots {
   bottom: -50px;
@@ -373,6 +425,12 @@ margin-bottom: 45px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   gap: 30px;
+
+  @media(max-width: 433px) { 
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+  }
 }
 .slider-item img {
   width: 100%;
@@ -382,6 +440,12 @@ margin-bottom: 45px;
   border-top-right-radius: 12px;
   height: 500px;
   object-fit: cover;
+
+  @media(max-width: 433px) { 
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+
+  }
 }
 @media (min-width: 1025px) {
   .slider-item {
@@ -405,16 +469,17 @@ margin-bottom: 45px;
   }
 }
 
+
+
 .clients {
   max-width: 1440px;
   margin: 0 auto;
   @media (min-width: 1442px){
     margin: 0 auto 60px;
   }
-  &.no-padding {}
   &-title {
     text-align: center;
-    padding: 15px 0  28px;
+    padding: 0px 0 28px;
     text-transform: uppercase;
   }
   &__list {
@@ -423,17 +488,8 @@ margin-bottom: 45px;
     flex-wrap: wrap;
     list-style: none;
   }
-  /*
-  &__logo1{
-    max-width: 100%;
-    height: auto;
-  }*/
 }
-.top__logo1{
-  max-width: 100%;
-  height: auto;
-}
-.clients1{
+.clients-logo{
   max-width: 100%;
   height: auto;
 }
@@ -503,7 +559,7 @@ margin-bottom: 45px;
 
 
 .footer {
-  padding: 30px 0;
+  padding: 43px 0;
   background: $greyBg;
   max-width: 1920px;
   margin: 0 auto;
@@ -551,12 +607,12 @@ margin-bottom: 45px;
   .desktop {
     display: none;
   }
-
+/*
   .mobile-burger {
     display: block;
-    padding: 18px 0 24px;
-  }
-
+    padding: 18px 0 24px;-выравнивал хедер при 375px
+  }*/
+/*
   .mobile-burger .checkbox {
     position: absolute;
     display: block;
@@ -580,7 +636,7 @@ margin-bottom: 45px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+  }*/
 
   .mobile-burger .hamburger-lines .line {
     display: block;

@@ -26,6 +26,11 @@ body {
   padding: 0 30px;
   margin: 0 auto;
 }
+@media (max-width: 433px) {
+  .container {
+    padding: 0 15px;
+  }
+}
 .container.no-padding {
   padding: 0;
 }
@@ -62,9 +67,19 @@ a:hover, a:hover svg {
 h1 {
   font-size: 38px;
 }
+@media (max-width: 433px) {
+  h1 {
+    font-size: 30px;
+  }
+}
 
 h2 {
   font-size: 38px;
+}
+@media (max-width: 433px) {
+  h2 {
+    font-size: 20px;
+  }
 }
 
 h3 {
@@ -163,9 +178,10 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
   h2 {
     font-size: 30px;
   }
-  .container {
-    max-width: 708px;
-  }
+  /*
+    .container {
+      max-width: calc(648px + 60px); для того что лого хедера было ближе к краю
+    }*/
 }
 @media screen and (min-width: 1024px) {
   .container {
@@ -182,7 +198,7 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     max-width: 1660px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .desktop {
     display: flex;
   }
@@ -201,6 +217,13 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     display: block;
     padding: 18px 0 24px;
   }
+}
+@media (max-width: 1024px) and (max-width: 433px) {
+  .mobile-burger {
+    padding: 0px 0 0px;
+  }
+}
+@media (max-width: 1024px) {
   .mobile-burger .checkbox {
     position: absolute;
     display: block;
@@ -212,6 +235,13 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     opacity: 0;
     cursor: pointer;
   }
+}
+@media (max-width: 1024px) and (max-width: 433px) {
+  .mobile-burger .checkbox {
+    top: 63px;
+  }
+}
+@media (max-width: 1024px) {
   .mobile-burger .hamburger-lines {
     display: block;
     height: 26px;
@@ -224,6 +254,16 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     flex-direction: column;
     justify-content: space-between;
   }
+}
+@media (max-width: 1024px) and (max-width: 433px) {
+  .mobile-burger .hamburger-lines {
+    height: 18px;
+    width: 18px;
+    top: 66px;
+    right: 22px;
+  }
+}
+@media (max-width: 1024px) {
   .mobile-burger .hamburger-lines .line {
     display: block;
     height: 4px;
@@ -414,8 +454,15 @@ header .logo {
   position: relative;
   gap: 4px;
   order: 0;
+  padding-bottom: 6px; /* выровнял хедер меню и лого*/
 }
-@media (max-width: 1024px) {
+@media (max-width: 433px) {
+  header .logo {
+    align-items: flex-start;
+    gap: 0px;
+  }
+}
+@media (max-width: 433px) {
   header .logo::after {
     content: "/";
     font-weight: bold;
@@ -432,28 +479,29 @@ header .logo {
     order: 2;
     line-height: 80px;
     position: relative;
-    top: -8px;
+    top: -14px;
   }
 }
-@media (max-width: 435px) {
+@media (max-width: 433px) {
   header .logo {
     justify-content: flex-start;
   }
   header .logo::after {
-    font-size: 40px;
+    font-size: 65px;
   }
   header .logo::before {
     font-size: 20px;
   }
   header .logo svg {
-    max-width: 70px;
+    max-width: 67px;
   }
 }
 header .header-content {
   height: 116px;
   justify-content: space-between;
   align-items: flex-end;
-  padding-bottom: 6px;
+  /*padding-bottom: 6px; выровнял хедер меню и лого*/
+  padding-bottom: 0px;
 }
 header .header-content__right {
   display: flex;
@@ -528,8 +576,9 @@ header .header-content__links li:not(.custom-li)::before {
 
 .top {
   height: calc(100vh - 116px);
-  padding-top: 80px;
-  margin-bottom: 45px;
+  /*height: calc(100vh - 124px);отступ лишний между h logo и слайд-меню */
+  padding-top: 60px;
+  /*margin-bottom: 45px;  отступ лишний между h logo и слайд-меню */
 }
 .top__title {
   color: rgb(255, 255, 255);
@@ -537,7 +586,7 @@ header .header-content__links li:not(.custom-li)::before {
   position: absolute;
   line-height: 46px;
   left: 50%;
-  top: 49%;
+  top: 46%;
   transform: translate(-50%, -50%);
 }
 .top__logo1 {
@@ -549,15 +598,32 @@ header .header-content__links li:not(.custom-li)::before {
   bottom: 0;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 100vh;
+  height: 100vh; /*растянет на всю высоту - но совпадает не с пиксельперфект*/
+  max-width: 100%;
+  /*height: auto; не растянет на всю высоту - но совпадает с пиксельперфект*/
 }
 .top__link {
   position: absolute;
-  bottom: 30px;
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
   color: rgb(255, 255, 255);
 }
+@media (max-width: 433px) {
+  .top__link {
+    bottom: 72px;
+  }
+}
+
+.tabs__block {
+  margin-top: 60px;
+}
+@media (max-width: 433px) {
+  .tabs__block {
+    margin-top: 0px;
+  }
+}
+
 .tabs {
   display: flex;
   flex-direction: column;
@@ -580,6 +646,11 @@ header .header-content__links li:not(.custom-li)::before {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+@media (max-width: 433px) {
+  .tabs .tab-content {
+    padding: 30px 15px 0px;
+  }
 }
 .tabs .tab-nav {
   width: 100%;
@@ -622,13 +693,23 @@ header .header-content__links li:not(.custom-li)::before {
     border-right: 4px solid rgb(240, 20, 90);
   }
 }
+@media (max-width: 433px) {
+  .tabs .tab-nav .ui-tabs-tab {
+    padding: 30px 30px;
+  }
+}
 
 .tab__paragraf-text {
   font-size: 19px;
 }
 
 .app__icon-inner {
-  padding-top: 55px;
+  padding-top: 61px;
+}
+@media (max-width: 433px) {
+  .app__icon-inner {
+    padding: 25px 15px 0;
+  }
 }
 .app__icon-list {
   list-style: none;
@@ -644,13 +725,29 @@ header .header-content__links li:not(.custom-li)::before {
     justify-content: center;
   }
 }
+@media (max-width: 375px) {
+  .app__icon-list {
+    gap: 30px;
+  }
+}
+@media (max-width: 433px) {
+  .app__icon-list {
+    gap: 34px;
+    margin-top: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    padding-bottom: 0px;
+  }
+}
 .app__icon-img {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   max-width: 100%;
   height: auto;
 }
 .app__icon-item {
   max-width: 400px;
+  min-height: 321px;
   font-size: 22px;
 }
 @media (max-width: 1399px) {
@@ -665,8 +762,7 @@ header .header-content__links li:not(.custom-li)::before {
 }
 .app__icon-subtitle {
   max-width: 300px;
-  margin-top: 10px;
-  margin-bottom: 14px;
+  margin: 0 0 18px;
   font-size: 22px;
   color: rgb(36, 163, 255);
 }
@@ -698,18 +794,19 @@ header .header-content__links li:not(.custom-li)::before {
   border-bottom-right-radius: 12px;
 }
 
+/*
 .container {
   margin: 0 auto;
   padding: 0 30px;
-}
 
-@media (min-width: 1024px) {
-  /* .container {
-     padding: 0 60px;
-   }  - портит хедер-мэин*/
 }
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 60px;
+  }  - портит хедер-мэин
+}*/
 .section {
-  padding: 40px 0;
+  padding: 18px 0 0px;
 }
 
 .flex {
@@ -724,9 +821,19 @@ header .header-content__links li:not(.custom-li)::before {
 .slider .slick-list {
   margin: 0 -10px;
 }
+@media (max-width: 433px) {
+  .slider .slick-list {
+    margin: 0 5px;
+  }
+}
 
 .slider.slick-dotted {
   margin-bottom: 50px;
+}
+@media (max-width: 433px) {
+  .slider.slick-dotted {
+    margin-bottom: 106px;
+  }
 }
 
 .slider .slick-dots {
@@ -759,6 +866,12 @@ header .header-content__links li:not(.custom-li)::before {
   border-bottom-right-radius: 12px;
   gap: 30px;
 }
+@media (max-width: 433px) {
+  .slider-item .slide-content {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}
 
 .slider-item img {
   width: 100%;
@@ -768,6 +881,12 @@ header .header-content__links li:not(.custom-li)::before {
   border-top-right-radius: 12px;
   height: 500px;
   object-fit: cover;
+}
+@media (max-width: 433px) {
+  .slider-item img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -794,11 +913,6 @@ header .header-content__links li:not(.custom-li)::before {
 .clients {
   max-width: 1440px;
   margin: 0 auto;
-  /*
-  &__logo1{
-    max-width: 100%;
-    height: auto;
-  }*/
 }
 @media (min-width: 1442px) {
   .clients {
@@ -807,7 +921,7 @@ header .header-content__links li:not(.custom-li)::before {
 }
 .clients-title {
   text-align: center;
-  padding: 15px 0 28px;
+  padding: 0px 0 28px;
   text-transform: uppercase;
 }
 .clients__list {
@@ -817,12 +931,7 @@ header .header-content__links li:not(.custom-li)::before {
   list-style: none;
 }
 
-.top__logo1 {
-  max-width: 100%;
-  height: auto;
-}
-
-.clients1 {
+.clients-logo {
   max-width: 100%;
   height: auto;
 }
@@ -889,7 +998,7 @@ header .header-content__links li:not(.custom-li)::before {
   }
 }
 .footer {
-  padding: 30px 0;
+  padding: 43px 0;
   background: rgb(237, 237, 247);
   max-width: 1920px;
   margin: 0 auto;
@@ -933,33 +1042,36 @@ header .header-content__links li:not(.custom-li)::before {
   .desktop {
     display: none;
   }
-  .mobile-burger {
-    display: block;
-    padding: 18px 0 24px;
-  }
-  .mobile-burger .checkbox {
-    position: absolute;
-    display: block;
-    height: 32px;
-    width: 32px;
-    top: 75px;
-    right: 20px;
-    z-index: 5;
-    opacity: 0;
-    cursor: pointer;
-  }
-  .mobile-burger .hamburger-lines {
-    display: block;
-    height: 26px;
-    width: 32px;
-    position: absolute;
-    top: 75px;
-    right: 20px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  /*
+    .mobile-burger {
+      display: block;
+      padding: 18px 0 24px;-выравнивал хедер при 375px
+    }*/
+  /*
+    .mobile-burger .checkbox {
+      position: absolute;
+      display: block;
+      height: 32px;
+      width: 32px;
+      top: 75px;
+      right: 20px;
+      z-index: 5;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .mobile-burger .hamburger-lines {
+      display: block;
+      height: 26px;
+      width: 32px;
+      position: absolute;
+      top: 75px;
+      right: 20px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }*/
   .mobile-burger .hamburger-lines .line {
     display: block;
     height: 4px;

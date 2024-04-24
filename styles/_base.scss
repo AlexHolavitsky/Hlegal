@@ -43,12 +43,12 @@ body {
   background: $white;
 }
 
-
-
-
 .container {
   padding: 0 30px;
   margin: 0 auto;
+  @media(max-width: 433px) {
+    padding: 0 15px;
+  }
 
   &.no-padding {
     padding: 0;
@@ -92,15 +92,20 @@ a {
 
 h1 {
   font-size: 38px;
+  @media(max-width: 433px) {  
+    font-size: 30px;
+  }
 }
 
 h2 {
   font-size: 38px;
+  @media(max-width: 433px) {  
+    font-size: 20px;
+  }
 }
 
 h3 {
   font-size: 22px;
-
   &.caps {
     font-size: 14px;
     letter-spacing: 1px;
@@ -197,10 +202,10 @@ button:not(.lang-btn) {
   h2 {
     font-size: 30px;
   }
-
+/*
   .container {
-    max-width: calc(648px + 60px);
-  }
+    max-width: calc(648px + 60px); для того что лого хедера было ближе к краю
+  }*/
 
 }
 
@@ -235,7 +240,7 @@ button:not(.lang-btn) {
 
 
 
-@media(min-width: 1024px) {
+@media(min-width: 1025px) {
   .desktop {
     display: flex;
   }
@@ -256,7 +261,10 @@ button:not(.lang-btn) {
 
   .mobile-burger {
     display: block;
-    padding: 18px 0 24px;
+    padding: 18px 0 24px;  
+    @media(max-width: 433px) {
+      padding: 0px 0 0px;  
+    }
   }
 
   .mobile-burger .checkbox {
@@ -269,6 +277,9 @@ button:not(.lang-btn) {
     z-index: 5;
     opacity: 0;
     cursor: pointer;
+    @media(max-width: 433px) {
+      top: 63px;
+    }
   }
 
   .mobile-burger .hamburger-lines {
@@ -282,7 +293,15 @@ button:not(.lang-btn) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media(max-width: 433px) {
+      height: 18px;
+      width: 18px;
+      top: 66px;
+      right: 22px;
+    }
   }
+
 
   .mobile-burger .hamburger-lines .line {
     display: block;
@@ -291,6 +310,7 @@ button:not(.lang-btn) {
     border-radius: 10px;
     background: #0e2431;
   }
+  
 
   .mobile-burger .hamburger-lines .line1 {
     transform-origin: 0% 0%;
