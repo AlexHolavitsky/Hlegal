@@ -925,17 +925,81 @@ header .header-content__links li:not(.custom-li)::before {
   text-transform: uppercase;
 }
 .clients__list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+.clients .clients-item {
+  height: 120px;
+  text-align: center;
+  display: block;
+  align-content: center;
+}
+.clients .photo1 {
+  background: rgb(28, 66, 128);
+}
+.clients .photo2 {
+  background: rgb(20, 54, 70);
+}
+.clients .photo3 {
+  background: linear-gradient(0deg, #F48B30, #F48B30), linear-gradient(0deg, #F48B30, #F48B30);
+}
+.clients .photo4 {
+  background: rgb(158, 77, 195);
+}
+.clients .photo5 {
+  background: rgb(253, 147, 57);
+}
+.clients .photo6 {
+  background: rgb(226, 226, 228);
+}
+.clients .photo7 {
+  background: rgb(199, 28, 54);
+}
+.clients .photo8 {
+  background: rgb(220, 243, 249);
+}
+.clients .photo9 {
+  background: rgb(234, 234, 234);
+}
+.clients .photo10 {
+  background: rgb(40, 34, 64);
+}
+.clients .photo11 {
+  background: rgb(29, 69, 104);
+}
+.clients .photo12 {
+  background: rgb(0, 0, 0);
+}
+.clients .clients-logo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 95px;
+  max-width: 220px;
 }
 
-.clients-logo {
+/*
+.clients {
+  max-width: 1440px;
+  margin: 0 auto;
+  @media (min-width: 1442px){
+    margin: 0 auto 60px;
+  }
+  &-title {
+    text-align: center;
+    padding: 0px 0 28px;
+    text-transform: uppercase;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+}
+.clients-logo{
   max-width: 100%;
   height: auto;
-}
-
+}*/
 .meeting {
   background: rgb(237, 237, 247);
   max-width: 1920px;

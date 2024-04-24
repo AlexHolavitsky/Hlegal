@@ -476,6 +476,53 @@ header {
   margin: 0 auto;
   @media (min-width: 1442px){
     margin: 0 auto 60px;
+
+  }
+  @media (max-width: 769px){
+
+  }
+  &-title {
+    text-align: center;
+    padding: 0px 0 28px;
+    text-transform: uppercase;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));     
+  }
+  .clients-item{
+    height: 120px;
+    text-align: center;
+    display: block;
+    align-content: center;
+  }
+  .photo1{background: rgba(28, 66, 128, 1);  }
+  .photo2{background: rgba(20, 54, 70, 1);  }
+  .photo3{background: linear-gradient(0deg, #F48B30, #F48B30),
+    linear-gradient(0deg, #F48B30, #F48B30);   }
+  .photo4{background: rgba(158, 77, 195, 1);  }
+  .photo5{background: rgba(253, 147, 57, 1);  }
+  .photo6{background: rgba(226, 226, 228, 1);  }
+  .photo7{background: rgba(199, 28, 54, 1);  }
+  .photo8{background: rgba(220, 243, 249, 1);  }
+  .photo9{background: rgba(234, 234, 234, 1);  }
+  .photo10{background: rgba(40, 34, 64, 1);  }
+  .photo11{background: rgba(29, 69, 104, 1);  }
+  .photo12{background: rgba(0, 0, 0, 1);  }
+  
+  .clients-logo{
+    object-fit: cover;
+    max-height: 95px;
+    max-width: 220px;
+  }
+}
+
+/*
+.clients {
+  max-width: 1440px;
+  margin: 0 auto;
+  @media (min-width: 1442px){
+    margin: 0 auto 60px;
   }
   &-title {
     text-align: center;
@@ -492,7 +539,9 @@ header {
 .clients-logo{
   max-width: 100%;
   height: auto;
-}
+}*/
+
+
 
 .meeting {
   background: $greyBg;
