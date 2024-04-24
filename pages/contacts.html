@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=1.0, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link  href="/styles/contact.css" rel="stylesheet">
+    <title>Contact</title>
+</head>
+<body>
+    <header>
+
+        <div class="mobile-block1">
+            <div class="mobile-block2">
+                <div class="custom-li1"><button class="lang-btn1">УК</button></div>
+                <div class="custom-li1"><button class="lang-btn1">РУ</button></div>
+                <div class="custom-li1"><button class="lang-btn1 active">EN</button></div>
+            </div>
+            <div class="telnumber"><a href="tel:0800 211 927">0800 211 927</a></div>
+        </div>
+
+        <div class="container">
+
+            <div class="mobile-burger">
+                
+                    <a href="./index.html" class="logo">
+                        <svg width="130" height="60">
+                            <use xlink:href="../sprite.svg#logo-color"/>
+                        </svg>
+                    </a>
+                    
+             <!--   <div class="logo">
+                    <a href="./index.html">
+                        <img class="logo_mobile" src="../images/Logo_contact.svg" alt="logo">
+                    </a>
+                </div>-->
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <nav class="navbar">
+                 <div class="navbar__white">
+                    <button class="navbar__btn">about us</button>
+                    <button class="navbar__btn">послуги</button>
+                    <button class="navbar__btn">команда</button>
+                    <button class="navbar__btn active">публікації</button>
+                    <button class="navbar__btn">контакти</button>
+                 </div>
+                </nav>
+            </div>   
+
+
+            <div class="header-content desktop">
+                <div>
+              <!--  <div class="logo">-->
+                <a href="./index.html" class="logo">
+                    <svg width="130" height="60">
+                        <use xlink:href="../sprite.svg#logo-color" />
+                    </svg>
+                </a>       
+            
+                 <!--  
+                    <a href="./index.html">
+                        <img src="../images/Logo_contact.svg" alt="logo">
+                    </a>-->
+                </div>
+                <div class="header-content__right">
+                    <ul class="header-content__links">
+                        <li class="custom-li"><button class="lang-btn">УК</button></li>
+                        <li class="custom-li"><button class="lang-btn">РУ</button></li>
+                        <li class="custom-li"><button class="lang-btn active">EN</button></li>
+                        <li><a href="#">Kyiv, Mechnikova str, 14/1</a></li>
+                        <li class="telnumber"><a href="tel:0800 211 927">0800 211 927</a></li>
+                        <li> <a href="#" style="line-height: 1;"><svg width="24" height="24">
+                            <use xlink:href="./sprite.svg#facebook" />
+                        </svg></a></li>
+                    </ul>
+                    <nav>
+                        <ul class="header-content__links bottoms">
+                            <li class="custom-li"><a href="#about us">about us</a></li>
+                            <li class="custom-li"><a href="#services">services</a></li>
+                            <li class="custom-li"><a href="#team">team</a></li>
+                            <li class="custom-li"><a href="#publications">publications</a></li>
+                            <li class="custom-li active"><a href="#contact">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section>
+        <div class="container">
+            <div class="contact-block">
+
+                <div class="lc">
+                    <h3>Kyiv,</h3>
+                    <h3>Mechnikova str, 14</h3>
+                    <div class="lc__slash1"></div>
+                    <div class="telnumber">
+                        <a href="tel:+380800211927">0800 211 927</a>
+                    </div>
+                    <div class="mailaddres">
+                        <a href="mailto:contact@forstudy.space">contact@forstudy.space</a>
+                    </div>
+                    <div class="lc__slash2"></div>
+                    <div class="logo_our_page">     
+                        <a href="#" style="line-height: 1;" class="facebook_our_page"><svg width="38" height="38">
+                            <use xlink:href="../sprite.svg#facebook__footer__logo" />
+                        </svg></a>                                     
+                    </div>
+                </div>
+
+                <form class="contact-form" action="#">
+                    <h1>We would like to help you</h1>
+                    <input class="input" placeholder="Name" name="name" required type="text" maxlength="36" id="test">
+                    <textarea class="input" placeholder="Message" name="message" maxlength="400"></textarea>
+                    <h3 class="caps">How to answer you?</h3>
+                    <input class="input" name="phone" placeholder="Phone number" type="tel" maxlength="16">
+                    <input class="input" name="email" placeholder="Email" maxlength="60" type="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <button class="primary" type="submit" aria-label="Send request">Send message</button>                    
+                </form>               
+            </div>
+            <div class="result"></div>
+
+            <script>
+                document.addEventListener("submit", formSubmit);
+                
+                function formSubmit(event) {
+                  event.preventDefault()
+                  console.log(event, 'event')
+                  const name = event.target[0].value;
+                  const message = event.target[1].value;
+                  const phone = event.target[2].value;
+                  const email = event.target[3].value;
+                  const result = document.querySelector('.result')
+                  result.innerHTML = Your name:${name},<br/> Your message:${message},  <br/> your phone:${phone}, <br/> your email : ${email}
+                  result.style.display = 'block'
+                }                
+              </script>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">          
+            <div class="footer__credits-inner">
+                <div class="footer__credits-block">
+                    <ul class="footer__credits--one">
+                        <li><a class="addres" href="#">Kyiv, Mechnikova str, 14/1</a></li>
+                        <li><a class="map" href="#">ON MAP</a></li>
+                    </ul>
+                    <ul class="footer__credits--one">
+                        <li> <a href="#" style="line-height: 1;"><svg width="38" height="38">
+                            <use xlink:href="../sprite.svg#facebook__footer__logo" />
+                        </svg></a></li>
+                        <li class="footert__telnumber"><a href="tel:0800 211 927">0800 211 927</a></li>
+                        <li class="footert__emailaddress"><a href="mailto:contact@forstudy.space">contact@forstudy.space</a></li>
+                    </ul>
+                </div>
+                <div class="footer__credits--one">
+                    <p class="footer__credits-text">© 2021 HLEGAL Law company, LLC</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
