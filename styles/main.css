@@ -47,9 +47,11 @@ h5 {
 a {
   color: rgb(36, 163, 255);
   transition: all 0.3s;
+  z-index: -1;
 }
 a svg {
   transition: all 0.3s;
+  z-index: -1;
 }
 a:hover, a:hover svg {
   color: rgb(240, 20, 90);
@@ -178,10 +180,6 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
   h2 {
     font-size: 30px;
   }
-  /*
-    .container {
-      max-width: calc(648px + 60px); для того что лого хедера было ближе к краю
-    }*/
 }
 @media screen and (min-width: 1024px) {
   .container {
@@ -228,7 +226,7 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
     position: absolute;
     display: block;
     height: 32px;
-    width: 32px;
+    width: 40px;
     top: 75px;
     right: 20px;
     z-index: 5;
@@ -244,8 +242,8 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
 @media (max-width: 1024px) {
   .mobile-burger .hamburger-lines {
     display: block;
-    height: 26px;
-    width: 32px;
+    height: 32px;
+    width: 40px;
     position: absolute;
     top: 75px;
     right: 20px;
@@ -257,8 +255,8 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
 }
 @media (max-width: 1024px) and (max-width: 433px) {
   .mobile-burger .hamburger-lines {
-    height: 18px;
-    width: 18px;
+    height: 32px;
+    width: 32px;
     top: 66px;
     right: 22px;
   }
@@ -266,7 +264,7 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
 @media (max-width: 1024px) {
   .mobile-burger .hamburger-lines .line {
     display: block;
-    height: 4px;
+    height: 5px;
     width: 100%;
     border-radius: 10px;
     background: #0e2431;
@@ -500,7 +498,6 @@ header .header-content {
   height: 116px;
   justify-content: space-between;
   align-items: flex-end;
-  /*padding-bottom: 6px; выровнял хедер меню и лого*/
   padding-bottom: 0px;
 }
 header .header-content__right {
@@ -570,15 +567,12 @@ header .header-content__links li:not(.custom-li)::before {
   background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  max-width: 1920px;
   margin: 0 auto;
 }
 
 .top {
   height: calc(100vh - 116px);
-  /*height: calc(100vh - 124px);отступ лишний между h logo и слайд-меню */
   padding-top: 60px;
-  /*margin-bottom: 45px;  отступ лишний между h logo и слайд-меню */
 }
 .top__title {
   color: rgb(255, 255, 255);
@@ -591,16 +585,14 @@ header .header-content__links li:not(.custom-li)::before {
 }
 .top__logo1 {
   position: absolute;
-  /*для того чтобы (absolute) сработал вместо (mardin 0 auto) указываем left: 50% и transform: translateX(-50%);*/
   left: 50%;
   transform: translateX(-50%);
   top: 0;
   bottom: 0;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 100vh; /*растянет на всю высоту - но совпадает не с пиксельперфект*/
+  height: 100vh;
   max-width: 100%;
-  /*height: auto; не растянет на всю высоту - но совпадает с пиксельперфект*/
 }
 .top__link {
   position: absolute;
@@ -794,17 +786,6 @@ header .header-content__links li:not(.custom-li)::before {
   border-bottom-right-radius: 12px;
 }
 
-/*
-.container {
-  margin: 0 auto;
-  padding: 0 30px;
-
-}
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 60px;
-  }  - портит хедер-мэин
-}*/
 .section {
   padding: 18px 0 0px;
 }
@@ -977,29 +958,6 @@ header .header-content__links li:not(.custom-li)::before {
   max-width: 220px;
 }
 
-/*
-.clients {
-  max-width: 1440px;
-  margin: 0 auto;
-  @media (min-width: 1442px){
-    margin: 0 auto 60px;
-  }
-  &-title {
-    text-align: center;
-    padding: 0px 0 28px;
-    text-transform: uppercase;
-  }
-  &__list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
-  }
-}
-.clients-logo{
-  max-width: 100%;
-  height: auto;
-}*/
 .meeting {
   background: rgb(237, 237, 247);
   max-width: 1920px;
@@ -1106,39 +1064,9 @@ header .header-content__links li:not(.custom-li)::before {
   .desktop {
     display: none;
   }
-  /*
-    .mobile-burger {
-      display: block;
-      padding: 18px 0 24px;-выравнивал хедер при 375px
-    }*/
-  /*
-    .mobile-burger .checkbox {
-      position: absolute;
-      display: block;
-      height: 32px;
-      width: 32px;
-      top: 75px;
-      right: 20px;
-      z-index: 5;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    .mobile-burger .hamburger-lines {
-      display: block;
-      height: 26px;
-      width: 32px;
-      position: absolute;
-      top: 75px;
-      right: 20px;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }*/
   .mobile-burger .hamburger-lines .line {
     display: block;
-    height: 4px;
+    height: 5px;
     width: 100%;
     border-radius: 10px;
     background: rgb(255, 255, 255);
@@ -1259,11 +1187,6 @@ header .header-content__links li:not(.custom-li)::before {
   .mobile-block1 a:hover, .mobile-block1 a:hover svg {
     color: rgb(240, 20, 90);
   }
-  /*
-    .flex {
-      flex-wrap: wrap;
-      gap: 75px; 
-    }ломает слайдер + дублируется в base440*/
   .intro__title {
     margin: 0 auto 27px;
   }
