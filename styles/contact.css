@@ -624,7 +624,6 @@ header .header-content__links li:not(.custom-li)::before {
   margin-left: 10px;
   font-weight: 700px;
   line-height: 16px;
-  z-index: 0;
 }
 
 .contact-form {
