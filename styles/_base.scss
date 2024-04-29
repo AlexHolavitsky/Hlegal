@@ -67,9 +67,10 @@ h5 {
 a {
   color: $blue;
   transition: all 0.3s;
-
+  z-index: -1;
   svg {
     transition: all 0.3s;
+    z-index: -1;
   }
 
   &:hover,
@@ -202,11 +203,6 @@ button:not(.lang-btn) {
   h2 {
     font-size: 30px;
   }
-/*
-  .container {
-    max-width: calc(648px + 60px); для того что лого хедера было ближе к краю
-  }*/
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -263,8 +259,8 @@ button:not(.lang-btn) {
   .mobile-burger .checkbox {
     position: absolute;
     display: block;
-    height: 32px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
     top: 75px;
     right: 20px;
     z-index: 5;
@@ -277,8 +273,8 @@ button:not(.lang-btn) {
 
   .mobile-burger .hamburger-lines {
     display: block;
-    height: 26px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
     position: absolute;
     top: 75px;
     right: 20px;
@@ -288,8 +284,8 @@ button:not(.lang-btn) {
     justify-content: space-between;
 
     @media(max-width: 433px) {
-      height: 18px;
-      width: 18px;
+      height: 32px;
+      width: 32px;
       top: 66px;
       right: 22px;
     }
@@ -298,7 +294,7 @@ button:not(.lang-btn) {
 
   .mobile-burger .hamburger-lines .line {
     display: block;
-    height: 4px;
+    height: 5px;
     width: 100%;
     border-radius: 10px;
     background: #0e2431;
