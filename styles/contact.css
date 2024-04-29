@@ -621,6 +621,7 @@ header .header-content__links li:not(.custom-li)::before {
   align-items: center;
   gap: 4px;
   order: 0;
+  z-index: 0px;
 }
 .facebook_our_page::after {
   content: "OUR PAGE ON FACEBOOK";
@@ -630,6 +631,7 @@ header .header-content__links li:not(.custom-li)::before {
   margin-left: 10px;
   font-weight: 700px;
   line-height: 16px;
+   z-index: 0px;
 }
 
 .contact-form {
