@@ -570,7 +570,6 @@ header .header-content__links li:not(.custom-li)::before {
   background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-  max-width: 1920px;
   margin: 0 auto;
 }
 
