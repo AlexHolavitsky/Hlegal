@@ -60,9 +60,9 @@ a:hover, a:hover svg {
 .tabs .tab-nav .ui-tabs-active,
 .tabs .tab-nav a:hover, .gradient-title {
   background: linear-gradient(rgb(240, 20, 90), rgb(239, 128, 128));
-  -webkit-background-clip: text;
+  /*-webkit-background-clip: text;*/
   -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
+  /* -moz-background-clip: text;*/
   -moz-text-fill-color: transparent;
 }
 
