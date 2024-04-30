@@ -60,7 +60,7 @@ header {
     height: 116px;
     justify-content: space-between;
     align-items: flex-end;
-
+    /*padding-bottom: 6px; выровнял хедер меню и лого*/
     padding-bottom: 0px;
 
     &__right {
@@ -144,15 +144,15 @@ header {
   background: $gradient-supersoft;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-
+  max-width: 1920px;
   margin: 0 auto;
 }
 
 .top {
   height: calc(100vh - 116px);
-
+  /*height: calc(100vh - 124px);отступ лишний между h logo и слайд-меню */ 
   padding-top: 60px;
-
+  /*margin-bottom: 45px;  отступ лишний между h logo и слайд-меню */ 
   @media(max-width: 433px) {  
    
   }
@@ -169,14 +169,15 @@ header {
   }
  &__logo1 {
     position: absolute;
+    /*для того чтобы (absolute) сработал вместо (mardin 0 auto) указываем left: 50% и transform: translateX(-50%);*/
     left: 50%;
     transform: translateX(-50%);
     top: 0;
     bottom: 0;
     object-fit: cover;
-    height: 100vh; 
+    height: 100vh; /*растянет на всю высоту - но совпадает не с пиксельперфект*/
     max-width: 100%;
-
+    /*height: auto; не растянет на всю высоту - но совпадает с пиксельперфект*/
   }
  &__link{
   position: absolute;
@@ -359,6 +360,19 @@ header {
 
 
 
+
+/*
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+
+}
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 60px;
+  }  - портит хедер-мэин
+}*/ 
+
 .section {
   padding: 18px 0 0px;
 }
@@ -503,7 +517,29 @@ header {
   }
 }
 
-
+/*
+.clients {
+  max-width: 1440px;
+  margin: 0 auto;
+  @media (min-width: 1442px){
+    margin: 0 auto 60px;
+  }
+  &-title {
+    text-align: center;
+    padding: 0px 0 28px;
+    text-transform: uppercase;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+}
+.clients-logo{
+  max-width: 100%;
+  height: auto;
+}*/
 
 
 
@@ -616,20 +652,49 @@ header {
 
 
 @media(max-width: 1024px) {
-   /*
+
   .desktop {
     display: none;
-  }*/
-
-
-  .mobile-burger .hamburger-lines .line {
-   /* display: block;
-    height: 5px;
-    width: 100%;
-    border-radius: 10px;*/
-    background: $white;
   }
 /*
+  .mobile-burger {
+    display: block;
+    padding: 18px 0 24px;-выравнивал хедер при 375px
+  }*/
+/*
+  .mobile-burger .checkbox {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 75px;
+    right: 20px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .mobile-burger .hamburger-lines {
+    display: block;
+    height: 26px;
+    width: 32px;
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }*/
+
+  .mobile-burger .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: $white;
+  }
+
   .mobile-burger .hamburger-lines .line1 {
     transform-origin: 0% 0%;
     transition: transform 0.4s ease-in-out;
@@ -769,7 +834,12 @@ header {
       }
     }
   }
-    */
+/*
+  .flex {
+    flex-wrap: wrap;
+    gap: 75px; 
+  }ломает слайдер + дублируется в base440*/
+
   .intro__title {
     margin: 0 auto 27px;
   }
