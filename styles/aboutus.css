@@ -254,7 +254,7 @@ button:not(.lang-btn).primary:active, button:not(.lang-btn).primary:focus {
 @media (max-width: 1024px) and (max-width: 433px) {
   .mobile-burger .hamburger-lines {
     height: 32px;
-    width: 32px;
+    width: 38px;
     top: 66px;
     right: 22px;
   }

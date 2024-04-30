@@ -282,10 +282,10 @@ button:not(.lang-btn) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+      
     @media(max-width: 433px) {
       height: 32px;
-      width: 32px;
+      width: 38px;
       top: 66px;
       right: 22px;
     }

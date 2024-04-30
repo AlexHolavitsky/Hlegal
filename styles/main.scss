@@ -616,20 +616,20 @@ header {
 
 
 @media(max-width: 1024px) {
-
+   /*
   .desktop {
     display: none;
-  }
+  }*/
 
 
   .mobile-burger .hamburger-lines .line {
-    display: block;
+   /* display: block;
     height: 5px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 10px;*/
     background: $white;
   }
-
+/*
   .mobile-burger .hamburger-lines .line1 {
     transform-origin: 0% 0%;
     transition: transform 0.4s ease-in-out;
@@ -769,7 +769,7 @@ header {
       }
     }
   }
-
+    */
   .intro__title {
     margin: 0 auto 27px;
   }
